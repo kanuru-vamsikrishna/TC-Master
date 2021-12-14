@@ -17,7 +17,7 @@ export const startGetTickets = () => {
         },
       })
       .then((response) => {
-        console.log(response.data)
+        // console.log(response.data)
         const ticket = response.data.response;
         dispatch(getTickets(ticket));
       })
