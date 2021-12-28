@@ -33,37 +33,51 @@ class CustomerForm extends React.Component {
     return (
       <div class="container px-2">
         <form onSubmit={this.handleSubmit}>
-          <label htmlFor="name">name</label>
-          <input
-            type="text"
-            id="name"
-            class="my-2"
-            name="name"
-            value={this.state.name}
-            onChange={this.handleChange}
-          />
+          <div class="container px-2">
+            <label htmlFor="name" class="form-label">
+              name
+            </label>
+            <input
+              type="text"
+              id="name"
+              class="form-control"
+              name="name"
+              value={this.state.name}
+              onChange={this.handleChange}
+            />
+          </div>
           <br />
-          <label htmlFor="email">email</label>
-          <input
-            type="text"
-            id="email"
-            class="my-2"
-            name="email"
-            value={this.state.email}
-            onChange={this.handleChange}
-          />
+          <div class="container px-2">
+            <label htmlFor="email" class="form-label">
+              email
+            </label>
+            <input
+              type="text"
+              id="email"
+              class="form-control"
+              name="email"
+              value={this.state.email}
+              onChange={this.handleChange}
+            />
+          </div>
           <br />
-          <label htmlFor="mobile">mobile</label>
-          <input
-            type="text"
-            id="mobile"
-            class="my-2"
-            name="mobile"
-            value={this.state.mobile}
-            onChange={this.handleChange}
-          />
+          <div class="container px-2">
+            <label htmlFor="mobile" class="form-label">
+              mobile
+            </label>
+            <input
+              type="text"
+              id="mobile"
+              class="form-control"
+              name="mobile"
+              value={this.state.mobile}
+              onChange={this.handleChange}
+            />
+          </div>
           <br />
-          <input type="submit" value="submit" />
+          <center>
+            <input type="submit" value="submit" class="btn btn-success" />
+          </center>
         </form>
       </div>
     );
@@ -78,4 +92,4 @@ const mapStateToProps = (state, props) => {
   };
 };
 
-export default withRouter(connect(mapStateToProps)(CustomerForm)); 
+export default withRouter(connect(mapStateToProps)(CustomerForm));

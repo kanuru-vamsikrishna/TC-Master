@@ -31,17 +31,24 @@ class DepartmentForm extends React.Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          {/* <label htmlFor="department">Add Department</label>  */}
+          <div class="container px-2">
+            <label htmlFor="department" class="form-label">
+              Add Department
+            </label>
+            <br />
+            <input
+              type="text"
+              id="department"
+              class="form-control"
+              name="name"
+              value={this.state.name}
+              onChange={this.handleChange}
+            />
+          </div>
           <br />
-          <input
-            type="text"
-            id="department"
-            name="name"
-            value={this.state.name}
-            onChange={this.handleChange}
-          />
-          <br />
-          <input type="submit" value="submit" />
+          <center>
+            <input type="submit" value="submit" class="btn btn-success" />
+          </center>
         </form>
       </div>
     );

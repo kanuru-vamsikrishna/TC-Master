@@ -1,5 +1,5 @@
 import React from "react";
-import { connect } from 'react-redux'
+import { connect } from "react-redux";
 import { startLogin } from "../actions/userAction";
 
 class login extends React.Component {
@@ -23,15 +23,15 @@ class login extends React.Component {
     //   'You clicked the button!',
     //   'success'
     // )
-    if(login) {
+    if (login) {
       const formData = {
         email: this.state.email,
         password: this.state.password,
-      }; 
+      };
       const redirect = () => {
-        return this.props.history.push('/') 
-    }
-    this.props.dispatch(startLogin(formData, redirect))
+        return this.props.history.push("/");
+      };
+      this.props.dispatch(startLogin(formData, redirect));
     }
     // const formData = {
     //   email: this.state.email,
@@ -41,43 +41,46 @@ class login extends React.Component {
     // const redirect = () => {
     //     return this.props.history.push('/')
     // }
-    // this.props.dispatch(startLogin(formData, redirect)) 
+    // this.props.dispatch(startLogin(formData, redirect))
   };
 
   render() {
     return (
       <div>
-        <h1>login</h1>
+        <center>
+          <h1>Login</h1>
+        </center>
         <form onSubmit={this.handleSubmit}>
-          
           <br />
-          <label htmlFor="email">Email</label>
-          <input
-            type="text"
-            id="email"
-            class="swal2-input"
-            name="email"
-            value={this.state.email}
-            onChange={this.handleChange}
-          />
-
+          <div class="container px-2">
+            <input
+              type="text"
+              placeholder="Mobile number or Email address"
+              class="form-control"
+              name="email"
+              value={this.state.email}
+              onChange={this.handleChange}
+            />
+          </div>
           <br />
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            class="swal2-input"
-            name="password"
-            value={this.state.password}
-            onChange={this.handleChange}
-          />
+          <div class="container px-2">
+            <input
+              type="password"
+              placeholder="Password"
+              class="form-control"
+              name="password"
+              value={this.state.password}
+              onChange={this.handleChange}
+            />
+          </div>
           <br />
-          <input type="submit" value="login" />
-          
+          <center>
+            <input type="submit" value="login" class="btn btn-success" />
+          </center>
         </form>
       </div>
     );
   }
 }
 
-export default connect()(login)
+export default connect()(login);

@@ -1,6 +1,6 @@
 import React from "react";
-import { BrowserRouter, Route, Link, Switch } from "react-router-dom"; 
-import register from "./components/register";  
+import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
+import register from "./components/register";
 import login from "./components/login";
 import { connect } from "react-redux";
 import Account from "./components/Account";
@@ -21,7 +21,7 @@ import TicketNew from "./components/tickets/New";
 import TicketShow from "./components/tickets/Show";
 import TicketEdit from "./components/tickets/Edit";
 
-function App(props) {   
+function App(props) {
   const handleLogout = () => {
     props.dispatch(startLogOut());
   };
@@ -45,7 +45,7 @@ function App(props) {
                 </Link>
               </li>
               <li class="nav-item">
-                <Link class="nav-link" to="/users/registers">
+                <Link class="nav-link" to="/users/register">
                   Register
                 </Link>
               </li>
@@ -93,10 +93,10 @@ function App(props) {
           )}
         </nav>
         <Switch>
-          <Route path="/users/registers" component={register} />
+          <Route path="/users/register" component={register} />
           <Route path="/users/login" component={login} />
           <Route path="/users/account" component={Account} />
-          <Route path="/customers" component={Customerlist} exact={true} /> 
+          <Route path="/customers" component={Customerlist} exact={true} />
           <Route path="/customers/new" component={CustomerNew} />
           <Route path="/customers/edit/:id" component={CustomerEdit} />
           <Route path="/customers/:id" component={CustomerShow} />
@@ -110,7 +110,7 @@ function App(props) {
           <Route path="/tickets" component={TicketsList} exact={true} />
           <Route path="/tickets/new" component={TicketNew} />
           <Route path="/tickets/edit/:id" component={TicketEdit} />
-          <Route path="/tickets/:id" component={TicketShow} />  
+          <Route path="/tickets/:id" component={TicketShow} />
         </Switch>
       </div>
     </BrowserRouter>

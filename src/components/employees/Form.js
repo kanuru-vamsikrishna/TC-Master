@@ -19,7 +19,7 @@ class EmployeeForm extends React.Component {
       name: this.state.name,
       email: this.state.email,
       mobile: this.state.mobile,
-      department: this.state.department,
+      department: this.state.department, 
     };
     // console.log(formData);
     this.props.handleSubmit(formData, this.props.departments);
@@ -38,51 +38,73 @@ class EmployeeForm extends React.Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <label htmlFor="name">Name</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={this.state.name}
-            onChange={this.handleChange}
-          />
+          <div class="container px-2">
+            <label htmlFor="name" class="form-label">
+              Name
+            </label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              name="name"
+              value={this.state.name}
+              onChange={this.handleChange}
+            />
+          </div>
           <br />
-          <label htmlFor="email">email</label>
-          <input
-            type="text"
-            id="email"
-            name="email"
-            value={this.state.email}
-            onChange={this.handleChange}
-          />
+          <div class="container px-2">
+            <label htmlFor="email" class="form-label">
+              email
+            </label>
+            <input
+              type="text"
+              class="form-control"
+              id="email"
+              name="email"
+              value={this.state.email}
+              onChange={this.handleChange}
+            />
+          </div>
           <br />
-          <label htmlFor="mobile">mobile</label>
-          <input
-            type="number"
-            id="mobile"
-            name="mobile"
-            value={this.state.mobile}
-            onChange={this.handleChange}
-          />
+          <div class="container px-2">
+            <label htmlFor="mobile" class="form-label">
+              mobile
+            </label>
+            <input
+              type="number"
+              class="form-control"
+              id="mobile"
+              name="mobile"
+              value={this.state.mobile}
+              onChange={this.handleChange}
+            />
+          </div>
           <br />
-          <label htmlFor="department">department</label>
-          <select
-            name="department"
-            value={this.state.department}
-            onChange={this.handleDeptChange}
-          >
-            <option selected>Select Department</option>
-            {this.props.departments.length > 0 &&
-              this.props.departments.map((department) => {
-                return (
-                  <option key={department._id} value={department._id}>
-                    {department.name}
-                  </option>
-                ); 
-              })}
-          </select>
+          <div class="container px-2">
+            <label htmlFor="department" class="form-label">
+              department
+            </label>
+            <select
+              name="department"
+              class="form-control"
+              value={this.state.department}
+              onChange={this.handleDeptChange}
+            >
+              <option selected>Select Department</option>
+              {this.props.departments.length > 0 &&
+                this.props.departments.map((department) => {
+                  return (
+                    <option key={department._id} value={department._id}>
+                      {department.name}
+                    </option>
+                  );
+                })}
+            </select>
+          </div>
           <br />
-          <input type="submit" value="submit" />
+          <center>
+            <input type="submit" value="submit"class="btn btn-success" />
+          </center>
         </form>
       </div>
     );

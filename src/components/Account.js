@@ -26,7 +26,7 @@ function Account(props) {
 }
 
 const mapStateToProps = (state) => {
-  console.log(state.user, "state") 
+  console.log(state.user, "state");
   return {
     user: state.user,
   };

@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { startRegister} from '../actions/userAction'
+import { startRegister } from "../actions/userAction";
 
 class register extends React.Component {
   constructor() {
@@ -13,7 +13,7 @@ class register extends React.Component {
   }
 
   handleChange = (e) => {
-    this.setState({      
+    this.setState({
       [e.target.name]: e.target.value,
     });
   };
@@ -26,45 +26,63 @@ class register extends React.Component {
     };
     // console.log(formData);
     const redirect = () => {
-        return this.props.history.push('/users/login')
-    }
+      return this.props.history.push("/users/login");
+    };
     this.props.dispatch(startRegister(formData, redirect));
   };
 
   render() {
     return (
       <div>
-        <h1>Register</h1>
+        <center>
+          <h1>Register</h1>
+        </center>
         <form onSubmit={this.handleSubmit}>
-          <label htmlFor="username">UserName</label>
-          <input
-            type="text"
-            id="username"
-            name="username"
-            value={this.state.username}
-            onChange={this.handleChange}
-          />
+          <div class="container px-2">
+            <label htmlFor="username" class="form-label">
+              UserName
+            </label>
+            <input
+              type="text"
+              id="username"
+              class="form-control"
+              name="username"
+              value={this.state.username}
+              onChange={this.handleChange}
+            />
+          </div>
           <br />
-          <label htmlFor="email">Email</label>
-          <input
-            type="text"
-            id="email"
-            name="email"
-            value={this.state.email}
-            onChange={this.handleChange}
-          />
-
+          <div class="container px-2">
+            <label htmlFor="email" class="form-label">
+              Email
+            </label>
+            <input
+              type="text"
+              id="email"
+              class="form-control"
+              name="email"
+              value={this.state.email}
+              onChange={this.handleChange}
+            />
+          </div>
           <br />
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            value={this.state.password}
-            onChange={this.handleChange}
-          />
+          <div class="container px-2">
+            <label htmlFor="password" class="form-label">
+              Password
+            </label>
+            <input
+              type="password"
+              id="password"
+              class="form-control"
+              name="password"
+              value={this.state.password}
+              onChange={this.handleChange}
+            />
+          </div>
           <br />
-          <input type="submit" value="register" />
+          <center>
+            <input type="submit" value="register" class="btn btn-success" />
+          </center>
         </form>
       </div>
     );
